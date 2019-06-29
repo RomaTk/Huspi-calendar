@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<title>Calendar</title>
-		<link rel="stylesheet" href="css/main.css"/>
+		<link rel="stylesheet" href="css/fonts.css"/>
 		<link rel="stylesheet" href="css/button.css"/>
 		<link rel="stylesheet" href="css/month.css"/>
+		<link rel="stylesheet" href="css/main.css"/>
 	</head>
 	<body>
 		<div id="changingMonthDiv">
-			<div class="button button-active">&larr;Previous</div>
-			<div class="button button-notActive">Now</div>
-			<div class="button button-active">Next&rarr;</div>
+			<div id="previousMonthButton" class="button button-active">&larr; previous</div>
+			<div id="nowMonthButton" class="button button-notActive">Now</div>
+			<div id="nextMonthButton" class="button button-active">next &rarr;</div>
 		</div>
 		<div id="illustratingMonthDiv">
 		</div>
 		<div id="dateUnderCalendarMonth">
 		</div>
 		<script src='js/displaying.js'></script>
+		<script src='js/buttonsMonth.js'></script>
 		<script src='js/main.js'></script>
 	</body>
 </html>

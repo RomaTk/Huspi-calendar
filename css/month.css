@@ -8,7 +8,6 @@
 }
 .dayDiv{
 	position:relative;
-	display:flex;
 	height:80px;
 	width:80px;
 	padding:20px;
@@ -22,11 +21,24 @@
 .dayDiv:hover { 
   border-color:#00ccff;
 }
+.dayNumberDiv{
+	font-family:RobotoLight;
+	font-size:15px;
+	color:black;
+	border-color:#f2f2f2;
+	text-align:center;
+	padding:3px;
+	border-radius:50%;
+	border-style:solid;
+	border-width:1px;
+	width:20px;
+	height:20px;
+}
 /*control panel for it*/
 #changingMonthDiv{
 	display:flex;
 	flex-direction:row;
 	justify-content: space-evenly;
 	flex-wrap:wrap;
-	width:100vw;
+	padding:20px;
 }
