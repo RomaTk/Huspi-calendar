@@ -2,25 +2,76 @@
 <html>
 	<head>
 		<meta charset="UTF-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/><!-- meta tag for phones -->
 		<title>Calendar</title>
-		<link rel="stylesheet" href="css/fonts.css"/>
-		<link rel="stylesheet" href="css/button.css"/>
-		<link rel="stylesheet" href="css/month.css"/>
-		<link rel="stylesheet" href="css/main.css"/>
+		<!-- start css styles -->
+		<link rel="stylesheet" href="css/fonts.css"/><!-- uploads all fonts for project -->
+		<link rel="stylesheet" href="css/button.css"/><!-- base styles for buttons (without special styles as for "change monthes" or "in modal window") -->
+		<link rel="stylesheet" href="css/month.css"/><!-- all css which in the main window (not modal window)  -->
+		<link rel="stylesheet" href="css/modalWindow.css"/><!-- all css which in the modal window (not main window) -->
+		<link rel="stylesheet" href="css/main.css"/><!-- changes in html and body for every browser-->
+		<!-- end css styles -->
 	</head>
 	<body>
+		<!-- like "control panel". Buttons are here. Start "changingMonthDiv" -->
 		<div id="changingMonthDiv">
-			<div id="previousMonthButton" class="button button-active">&larr; previous</div>
-			<div id="nowMonthButton" class="button button-notActive">Now</div>
-			<div id="nextMonthButton" class="button button-active">next &rarr;</div>
+			<div id="previousMonthButton" class="button button-active monthChangeButton">&larr; previous</div>
+			<div id="nowMonthButton" class="button button-notActive monthChangeButton">Now</div>
+			<div id="nextMonthButton" class="button button-active monthChangeButton">next &rarr;</div>
 		</div>
+		<!-- end "changingMonthDiv" -->
+		
+		<!-- the div with days in month. Start "illustratingMonthDiv" -->
 		<div id="illustratingMonthDiv">
+			<!--
+				Example of content:
+				
+				<div class="dayDiv"> - one day
+					<div class="dayNumberDiv">1</div> - text inside circle showing day of month
+					<div class="dayText">hello</div> - text inside showing text for that day
+				</div>
+				<div class="dayDiv">
+					<div class="dayNumberDiv">2</div>
+					<div class="dayText">hello</div>
+				</div>
+				...
+			-->
 		</div>
+		<!-- end "illustratingMonthDiv" -->
+		
+		<!-- the div with name of month and year. Start "dateUnderCalendarMonth" -->
 		<div id="dateUnderCalendarMonth">
+			<!-- Example of content: June, 2019 -->
 		</div>
-		<script src='js/displaying.js'></script>
-		<script src='js/buttonsMonth.js'></script>
-		<script src='js/main.js'></script>
+		<!-- end "dateUnderCalendarMonth" -->
+		
+		<!-- everything in modal window. Start "grayBackgroundForModalWindow" -->
+		<div id="grayBackgroundForModalWindow">
+			<!-- div with textarea, which text aded in day information. Start "modalWindowForTextarea" -->
+			<div id="modalWindowForTextarea" class="modalWindowStyle">
+				<textarea id="writeToDateTextarea" autocomplete="on" placeholder="Plans"></textarea><!-- textarea is without limits. But it is bad, as you know local storage is limited  -->
+			</div>
+			<!--end "modalWindowForTextarea" -->
+			
+			<!-- like "control panel". Buttons are here. Start "modalWindowForButtons" -->
+			<div id="modalWindowForButtons" class="modalWindowStyle" >
+				<div id="cancelSaveButton" class="button button-active buttonsInSpecialModalWindow">Cancel</div>
+				<div id="acceptSaveButton" class="button button-active buttonsInSpecialModalWindow">Save</div>
+			</div>
+			<!-- end "modalWindowForButtons" -->
+		</div>
+		<!-- end "grayBackgroundForModalWindow" -->
+		
+		<!-- start js scripts -->
+		<script src='js/displaying.js'></script><!-- IN this file: 1.Functions for creating elements; 2.Functions showing elements -->
+		<script src='js/modalWindow.js'></script><!-- IN this file: 1.Functions to work with modal window as events mainly -->
+		<script src='js/buttonsMonth.js'></script><!-- IN this file: 1.Functions as events for "control panel" in monthes and necessary for that -->
+		<script src='js/storage.js'></script><!-- IN this file: 1.Functions to work with localStorage -->
+		<script src='js/main.js'></script><!-- IN this file: 1.Global variables are injected; 2.Starts all process -->
+		<!-- end js scripts -->
 	</body>
 </html>
+<!-- made by Roman Tkachenko 
+phone: +380666138273 
+email: rt.craz@gmail.com
+-->

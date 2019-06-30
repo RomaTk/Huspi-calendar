@@ -1,9 +1,13 @@
+/*
+	base styles for buttons (without special styles as for "change monthes" or "in modal window")
+*/
 .button{
 	cursor:pointer;
 	padding:5px 20px 5px 20px;
 	border-style:solid;
 	border-width:2px;
 	border-radius:10px;
+	margin:5px;
 }
 .button-active{
 	color:white;

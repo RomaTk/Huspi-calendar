@@ -1,4 +1,8 @@
-function nextMonth(){
+/*
+	IN this file:
+		1.Functions as events for "control panel" in monthes and necessary for that
+*/
+function nextMonth(){// event button "next"
 	monthNumberGlobal+=1;
 	if (monthNumberGlobal>11){
 		yearGlobal+=1;
@@ -7,7 +11,7 @@ function nextMonth(){
 	ifNecessaryActivateButton();
 	showMonth(monthNumberGlobal,yearGlobal);
 }
-function previousMonth(){
+function previousMonth(){// event button "previous"
 	monthNumberGlobal-=1;
 	if (monthNumberGlobal<0){
 		yearGlobal-=1;
@@ -26,7 +30,7 @@ function ifNecessaryActivateButton(){//activate button now if it is necessary
 		disactivateNowMonthButton();
 	}
 }
-function nowMonth(){
+function nowMonth(){// event button "now"
 	let today=new Date();
 	monthNumberGlobal=today.getMonth();
 	yearGlobal=today.getFullYear();

@@ -1,0 +1,58 @@
+/*
+	all css which in the modal window (not main window)
+*/
+#grayBackgroundForModalWindow{
+	position:fixed;
+	width:100vw;
+	height:100vh;
+	top:0px;
+	left:0px;
+	background-color:rgba(128, 128, 128, 0.5);
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	opacity:0;
+	display:none;
+	transition:opacity 0.2s ease-out 0s; /* if you will change, than you should change in function "hideModalWindow" setTimeOut */
+}
+.modalWindowStyle{
+	background-color:#ffffff;
+	border-radius:20px;
+	box-shadow: 0px -13px 42px 0px rgba(0,0,0,0.2);
+}
+#writeToDateTextarea{
+	width:100%;
+	height:20vh;
+	border-width:0px;
+	padding:0px;
+	resize: none;
+	outline:none;
+}
+#modalWindowForTextarea{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	padding:20px;
+	width:calc(40vw - 40px);/* 40px is double padding*/
+	margin:20px;
+}
+#modalWindowForButtons{
+	display:flex;
+	margin:20px;
+}
+/* special buttons starts*/
+.buttonsInSpecialModalWindow{
+	margin:20px;
+}
+/* special buttons ends*/
+
+/*some changes for mobile*/
+@media only screen and (max-width: 600px) {
+	#writeToDateTextarea{
+		height:40vh;
+	}
+	#modalWindowForTextarea{
+		width:calc(80vw - 40px);/* 40px is double padding*/
+	}
+}

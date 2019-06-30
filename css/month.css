@@ -1,10 +1,15 @@
-/*calendar main part*/
+/*
+	all css which in the main window (not modal window)
+*/
+
+/*"calendar main part" starts*/
 #illustratingMonthDiv{
 	display:flex;
 	flex-direction:row;
-	justify-content: flex-start;
+	justify-content: center;
 	flex-wrap:wrap;
-	width:100vw;
+	width:(100vw - 10px);
+	transition:opacity 0.2s ease-out 0s; /* if you will change, than you should change in function "showMonth" setTimeOut and in style of div id"dateUnderCalendarMonth" transition -> opacity*/
 }
 .dayDiv{
 	position:relative;
@@ -17,6 +22,8 @@
 	border-radius:20px;
 	margin:5px;
 	cursor:pointer;
+	overflow-x:hidden;
+	overflow-y:hidden;
 }
 .dayDiv:hover { 
   border-color:#00ccff;
@@ -34,7 +41,15 @@
 	width:20px;
 	height:20px;
 }
-/*control panel for it*/
+.dayText{
+	font-family:RobotoLight;
+	font-size:15px;
+	color:black;
+	word-wrap: break-word;
+}
+/*"calendar main part" ends*/
+
+/*control panel for monthes as buttons starts*/
 #changingMonthDiv{
 	display:flex;
 	flex-direction:row;
@@ -42,3 +57,16 @@
 	flex-wrap:wrap;
 	padding:20px;
 }
+#dateUnderCalendarMonth{
+	text-align:center;
+	transition:opacity 0.2s ease-out 0s;/* if you will change, than you should change in function "showMonth" setTimeOut and in style of div id"illustratingMonthDiv" transition -> opacity*/
+	margin:20px;
+}
+
+/*some changes for mobile*/
+@media only screen and (max-width: 600px) {
+	.monthChangeButton{
+		width:80vw;
+	}
+}
+/*control panel for monthes as buttons ends*/
